@@ -8,13 +8,17 @@
     </head>
     <body>
         <h1>DC Wire size Calculator</h1>
-        <form>
-            <input type="number" ><br>
-            <input type="number" ><br>
-            <input type="number" ><br>
-            <input type="number" >
+        <button onclick="funny()">Hello</button>
+        <form id="calc">
+            <label for="vVal">volts:</label>
+            <input type="number" name="vVal" required step="any"><br>
+            <label for="iVal">amps:</label>
+            <input type="number" name="iVal" required step="any"><br>
+            <input type="submit" value="Go">
         </form>
         
+        <output id="out"></output>
+
         <script src="/assets/js/scripts.js"></script>
     </body>
 </html>
