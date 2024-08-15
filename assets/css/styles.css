@@ -1,3 +1,37 @@
 body {
-    background-color: cadetblue;
+    box-sizing: border-box;
+    margin: none;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-inline: 20%;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.calculator-grid > .span-grid {
+    grid-column: 1/4;
+    margin: 10px;
+    justify-self: center;
+}
+
+.span-grid > input {
+    margin-top: .5rem;
+    margin-inline: 1rem;
+}
+
+.btn-submit {
+    background-color: rgb(190 249 190);
+}
+
+.btn-reset {
+    background-color: rgb(255 84 114);
 }
