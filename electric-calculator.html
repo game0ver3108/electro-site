@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Electric Calculator</title>
+        <link rel="stylesheet" href="/assets/css/styles.css">
+	</head>
+	<body>
+		<h1>Electric Calculator</h1>
+
+		<div>
+			<form id="calculator-form" class="calculator-grid">
+				<div class="form-group">
+					<label for="amps">Amps</label>
+					<input id="amps" name="amps" type="text" />
+				</div>
+				<div class="form-group">
+					<label for="volts">Volts</label>
+					<input id="volts" name="volts" type="text" />
+				</div>
+				<div class="form-group">
+					<label for="watts">Watts</label>
+					<input id="watts" name="watts" type="text" />
+				</div>
+                <div class="span-grid">
+                    <input class="btn btn-submit" type="submit" value="Calculate" />
+				    <input class="btn btn-reset" type="reset" value="Reset" />
+                </div>
+			</form>
+		</div>
+        <script src="/assets/js/electric-calculator.js"></script>
+	</body>
+</html>
