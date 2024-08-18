@@ -1,0 +1,27 @@
+/* Define root variables */
+:root {
+    --grid-columns: 2; /* Set the number of grid columns */
+}
+
+h1 {
+    text-align: center; /* Put the heading in the middle of the page */
+}
+
+/* This applies to the outer most (parent) grid element */
+.my-grid {
+    display: grid;  /* Choose grid layout */
+    grid-template-columns: repeat(var(--grid-columns), 1fr); /* Create n number of equally spaced columns */
+    gap: 20px;  /* Add a gap in between each grid cell (X and Y axis) */
+    text-align: center; /* Center all grid text */
+    border: 1px solid red; /* Give the grid perimeter a red border */
+    margin: 30px; /* Create a 30 pixel wide gap around the outside of the entire grid */
+    padding: 20px; /* Leave a 20 pixel wide gap inside the grid border (between the border and each grid cell) */
+}
+
+/* This applies to any element within the grid */
+.my-grid * {
+    height: 20px; /* Set the cell height */
+    padding: 5px; /* Create a 20 pixel wide space inside the cell */
+    align-content: center; /* Vertailcally align the cell content */
+    border: 1px solid blue; /* Give each cell a thin blue border */
+}
