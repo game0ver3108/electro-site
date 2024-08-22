@@ -1,0 +1,62 @@
+:root {
+	--editableFieldColour: #e9e4ff;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+.col-grid {
+	margin-inline: auto;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.5rem 1rem;
+	width: fit-content;
+}
+
+.col-grid > input[type="submit"],
+.col-grid > input[type="reset"] {
+	margin-inline: auto;
+}
+
+input[type="submit"],
+input[type="reset"] {
+	cursor: pointer;
+	width: fit-content;
+}
+
+output {
+	margin-block: 2rem;
+}
+
+table,
+th,
+td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 0.5rem 1rem;
+}
+
+.settings-table-reference {
+	margin-top: 1rem;
+}
+
+.settings-table-reference * {
+	font-size: small;
+	color: rgb(91, 91, 91);
+}
+
+select,
+td[contenteditable="true"],
+input:not([readonly]):not([type="submit"]):not([type="reset"]) {
+	background-color: var(--editableFieldColour);
+}
+
+.result {
+	font-size: large;
+	font-weight: bold;
+}

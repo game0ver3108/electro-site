@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="assets/css/x-sectional-area.css" />
+		<title>Cross Sectional Area Calculator</title>
+	</head>
+	<body>
+		<h1>Cross Sectional Area Calculator</h1>
+
+		<form class="col-grid" id="calc-form">
+			<input type="number" name="amps" id="amps" step="0.1" required />
+			<label for="amps">Amps</label>
+
+			<select name="wire-type" id="wire-type">
+				<option value="C">Copper</option>
+				<option value="A">Aluminium</option>
+			</select>
+			<label for="wire-type">Wire Type</label>
+
+			<input
+				type="number"
+				name="temperature"
+				id="temperature"
+				min="0"
+				max="120"
+				required
+			/>
+			<label for="temperature">Temperature (Deg. C)</label>
+
+			<input
+				type="number"
+				name="wire-length"
+				id="wire-length"
+				step="0.01"
+				required
+			/>
+			<label for="wire-length">Wire Length (metres)</label>
+
+			<input
+				type="number"
+				name="voltage-drop"
+				id="voltage-drop"
+				placeholder="e.g. 0.03"
+				step="0.01"
+				required
+			/>
+			<div>
+				<label for="voltage-drop">Voltage Drop (%)</label>
+				<small
+					><i
+						>E.g. 0.5% for non-essential items, 0.3% for essential items etc</i
+					></small
+				>
+			</div>
+
+			<input type="submit" value="Calculate" />
+			<input type="reset" value="Clear" />
+		</form>
+
+		<output class="col-grid">
+			<input
+				type="number"
+				name="x-sectional-area"
+				id="x-sectional-area"
+				class="result"
+				readonly
+			/>
+			<label class="result" for="x-sectional-area"
+				>Cross Sectional Area (mm²)</label
+			>
+		</output>
+
+		<hr />
+		<br />
+
+		<b>Settings:</b>
+		<!--
+        	At 20 deg C
+	        Ref 1: https://www.engineeringtoolbox.com/copper-aluminum-conductor-resistance-d_1877.html
+	        Ref 2: https://www.aluminum-magnet-wire.com/product/copper-clad-wire
+        -->
+		<table class="settings-table">
+			<tr>
+				<th style="text-align: start">Values @ 20&deg;C</th>
+				<th>Copper</th>
+				<th>Aluminium</th>
+			</tr>
+			<tr>
+				<td>Resistive Value @ 20&deg;C</td>
+				<td id="settings-copper-rv" contenteditable="true">1.724e-8</td>
+				<td id="settings-aluminium-rv" contenteditable="true">2.65e-8</td>
+			</tr>
+			<tr>
+				<td>Temperature Coefficient</td>
+				<td contenteditable="true" id="settings-copper-tc">0.00393</td>
+				<td contenteditable="true" id="settings-aluminium-tc">0.00429</td>
+			</tr>
+		</table>
+
+		<div class="settings-table-reference">
+			<span>Default Values Reference</span>
+			<table>
+				<tr>
+					<th style="text-align: start">Values @ 20&deg;C</th>
+					<th>Copper</th>
+					<th>Aluminium</th>
+				</tr>
+				<tr>
+					<td>Resistive Value @ 20&deg;C</td>
+					<td>1.724e-8</td>
+					<td>2.65e-8</td>
+				</tr>
+				<tr>
+					<td>Temperature Coefficient</td>
+					<td>0.00393</td>
+					<td>0.00429</td>
+				</tr>
+			</table>
+		</div>
+
+		<script src="assets/js/x-sectional-area.js"></script>
+	</body>
+</html>
